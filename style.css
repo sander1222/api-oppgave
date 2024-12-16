@@ -9,7 +9,9 @@ main img {
     width: fit-content;
 }
 #logo {
-    margin: 10px;
+    display: block;
+    width: 100%;
+    margin: auto;
 }
 
 /* /Images ------------------------------------------------------------------*/
@@ -34,7 +36,7 @@ main img {
 /* Header -----------------------------------------------------------------*/
 
 .head {
-    background-color: red;
+    background-color: #FF0000;
     grid-area: head;
 }
 
@@ -47,6 +49,7 @@ main img {
 
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 /* /Side-bar ------------------------------------------------------------*/
@@ -81,3 +84,15 @@ footer {
 
 /* /Container ---------------------------------------------------------------*/
 
+/* Media --------------------------------------------------------------------*/
+@media (max-width: 320px) {
+
+    .side-bar div {
+        width: 100%;
+        height: fit-content;
+    }
+    #logo {
+        width: max(100%, 20px);
+    }
+}
+/* /Media -------------------------------------------------------------------*/
