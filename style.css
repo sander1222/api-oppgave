@@ -126,6 +126,9 @@ footer {
 /* Media --------------------------------------------------------------------*/
 @media (max-width: 320px) {
 
+    .side-bar{
+        min-width: 38px;
+    }
     .side-bar div {
         width: 100%;
         height: fit-content;
