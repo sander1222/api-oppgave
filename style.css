@@ -1,83 +1,162 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Images -------------------------------------------------------------------*/
-
-main img {
-    width: fit-content;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
-#logo {
-    margin: 10px;
-}
-
-/* /Images ------------------------------------------------------------------*/
-
-/* Container ----------------------------------------------------------------*/
 
 .container {
-    /* background-color: aquamarine; */
-    width: 100vw;
-    height: 100vh;
-    /* overflow-x: hidden; */
+  width: 100vw;
+  height: 100vh;
 
-    display: grid;
-    grid-template-areas: 
-    'side-bar head head head'
-    'side-bar main main main'
-    'side-bar foot foot foot';
-    grid-template-columns: 15% 85%;
-    grid-template-rows: 15% auto 15%;
+  display: grid;
+  grid-template-areas:
+    "side-bar head head head"
+    "side-bar main main main"
+    "side-bar foot foot foot";
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 15% auto 10%;
 }
-
-/* Header -----------------------------------------------------------------*/
 
 .head {
-    background-color: red;
-    grid-area: head;
+  background-color: #f11815;
+  color: white;
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-
-/* /Header --------------------------------------------------------------- */
-/* Side-bar -------------------------------------------------------------*/
 
 .side-bar {
-    background-color: #FFCB05;
-    grid-area: side-bar;
-
-    display: flex;
-    justify-content: center;
+  background-color: #ffcb05;
+  grid-area: side-bar;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-/* /Side-bar ------------------------------------------------------------*/
-/* Main -----------------------------------------------------------------*/
+.side-content {
+  text-align: center;
+}
+
+#logo {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 80%;
+}
+
+button {
+  background-color: #f11815;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 2px solid #333;
+}
 
 main {
-    background-color: #FFF176;
-    grid-area: main;
-
-    display: grid;
-    grid-template-columns: auto 80% auto;
-    justify-content: space-around;
-    padding: 20px;
+  background-color: #fff176;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: auto 80% auto;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
+
+main img {
+  width: 100px;
+  height: auto;
+}
+
 .content {
-    /* background-color: aqua; */
-    display: flex;
-    width: auto;
-    height: 100%;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  overflow-y: auto;
+  height: 80vh;
 }
 
-/* /Main --------------------------------------------------------------- */
-/* Footer -----------------------------------------------------------------*/
+#pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.pokemon-card {
+  background-color: #f8f8f8;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: auto;
+}
+
+.pokemon-card h2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #f11815;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem;
+  color: #333;
+}
 
 footer {
-    background-color: black;
-    color: white;
-    grid-area: foot;
+  background-color: #333;
+  color: white;
+  grid-area: foot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
 }
-
-/* /Footer ----------------------------------------------------------------*/
-
-/* /Container ---------------------------------------------------------------*/
-
