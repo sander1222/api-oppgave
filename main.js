@@ -1,28 +1,28 @@
-const form = document.querySelector('form');
+// Get the form element and error message container
+const loginForm = document.getElementById("loginForm");
+const errorMessage = document.getElementById("errorMessage");
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-   
-    const captchaResponse = grecaptcha.getResponse();
+// Correct username and password
+const correctUsername = "Oil Barrel";
+const correctPassword = "BarrelGang";
 
-    // Sjekk om CAPTCHA er fullført
-    if (!(captchaResponse.length > 0)) {
-        throw new Error("Captcha not completed");
-    }
+// Event listener for form submission
+loginForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from reloading the page
 
-    const fd = new FormData(e.target);
-    const params = new URLSearchParams(fd);
+  // Get the entered username and password
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-    // Send forespørselen
-    fetch('http://httpbin.org/post', {
-        method: 'POST', // Husk å angi HTTP-metoden
-        body: params
-    })
-    .then(response => response.json()) // Håndter JSON-respons
-    .then(data => {
-        console.log("Success:", data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+  // Check if the entered credentials are correct
+  if (username === correctUsername && password === correctPassword) {
+    alert("Login successful!");
+    window.location.href = "pokeindex.html"; // Redirect to another page
+  } else {
+    // Show an error message if the credentials are incorrect
+    errorMessage.style.display = "block";
+    errorMessage.textContent = "Incorrect username or password.";
+  }
 });
+
+
