@@ -46,6 +46,10 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+.head h1 {
+  font-family: "Press Start 2P", system-ui;
+}
+
 .side-bar {
   background-color: #ffcb05;
   grid-area: side-bar;
