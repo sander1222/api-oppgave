@@ -1,5 +1,16 @@
 const container = document.getElementById("pokemon-container");
 
+const regions = 
+{ kanto: { start: 1, end: 151}, 
+  johto: { start: 152, end: 251}, 
+  hoenn: { start: 252, end: 386}, 
+  sinnoh: { start: 387, end: 494}, 
+  unova: { start: 495, end: 649}, 
+  kalos: { start: 650, end: 721}, 
+  alola: { start: 722, end: 809}, 
+  galar: { start: 810, end: 905}, 
+  paldea: { start: 906, end: 1025}, 
+};
 
 
 async function fetchPokemonList() {
@@ -11,6 +22,8 @@ async function fetchPokemonList() {
     );
     const data = await response.json();
     const pokemonList = data.results;
+
+    // console.log("Fetched Pokémon List:", pokemonList)
 
     container.innerHTML = "";
 
@@ -24,7 +37,7 @@ async function fetchPokemonList() {
 
 async function fetchRandomPokemon() {
   try {
-    const randomId = Math.floor(Math.random() * 1010) + 1; // Pokémon ID range: 1 - 1010
+    const randomId = Math.floor(Math.random() * 1025) + 1; // Pokémon ID range: 1 - 1025
     await displayPokemon(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
   } catch (error) {
     console.error("Error fetching random Pokémon:", error);
@@ -70,6 +83,21 @@ async function displayPokemon(url) {
   }
 }
 
+async function fetchPokemonByRegion() { 
+  const selectedRegion = document.getElementById("region-select").value; 
+
+  if (!selectedRegion) {
+    alert('Please select a region!')
+    return;
+  }
+
+  const { start, end,} = regions[selectedRegion]; 
+  container.innerHTML = ""; 
+  for (let i = start; i <= end; i++) { 
+    await displayPokemon(`https://pokeapi.co/api/v2/pokemon/${i}`); 
+  } 
+}
+
 function clearPokemon() {
   container.innerHTML = '';
 }
@@ -86,4 +114,7 @@ document
 document
   .getElementById('clear-pokemon')
   .addEventListener('click', clearPokemon);
+document
+.getElementById('fetch-region-pokemon')
+.addEventListener('click', fetchPokemonByRegion)
 

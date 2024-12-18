@@ -1,0 +1,19 @@
+Kanto Region: Pokémon with IDs from 1 to 151.
+
+Johto Region: Pokémon with IDs from 152 to 251.
+
+Hoenn Region: Pokémon with IDs from 252 to 386.
+
+Sinnoh Region: Pokémon with IDs from 387 to 494.
+
+Unova Region: Pokémon with IDs from 495 to 649.
+
+Kalos Region: Pokémon with IDs from 650 to 721.
+
+Alola Region: Pokémon with IDs from 722 to 809.
+
+Galar Region: Pokémon with IDs from 810 to 905.
+
+Paldea Region: Pokémon with IDs from 906 to 1025.
+
+Various Pokémon Forms: IDs from 1026 onwards.
