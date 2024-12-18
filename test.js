@@ -1,3 +1,7 @@
+const container = document.getElementById("pokemon-container");
+
+
+
 async function fetchPokemonList() {
   try {
     const limit = document.getElementById("pokemon-limit").value;
@@ -8,7 +12,6 @@ async function fetchPokemonList() {
     const data = await response.json();
     const pokemonList = data.results;
 
-    const container = document.getElementById("pokemon-container");
     container.innerHTML = "";
 
     for (const pokemon of pokemonList) {
@@ -48,8 +51,7 @@ async function searchPokemon() {
 }
 
 async function displayPokemon(url) {
-  const container = document.getElementById("pokemon-container");
-
+  
   try {
     const response = await fetch(url);
     const details = await response.json();
@@ -68,6 +70,10 @@ async function displayPokemon(url) {
   }
 }
 
+function clearPokemon() {
+  container.innerHTML = '';
+}
+
 document
   .getElementById("fetch-pokemon")
   .addEventListener("click", fetchPokemonList);
@@ -77,3 +83,7 @@ document
 document
   .getElementById("search-pokemon-btn")
   .addEventListener("click", searchPokemon);
+document
+  .getElementById('clear-pokemon')
+  .addEventListener('click', clearPokemon);
+
