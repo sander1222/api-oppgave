@@ -71,12 +71,13 @@ async function displayPokemon(url) {
 
     const type = details.types?.[0]?.type?.name || "Unknown";
     const sprite = details.sprites?.front_default || "No sprite available";
+    const name = details.name.charAt(0).toUpperCase() + details.name.slice(1);
 
     container.innerHTML += `
       <div class="pokemon-card">
-        <h2>${details.name}</h2>
+        <h2>${name}</h2>
         <p>Type: ${type}</p>
-        <img src="${sprite}" alt="${details.name}" />
+        <img src="${sprite}" alt="${name}" />
       </div>`;
   } catch (error) {
     console.error("Error displaying Pokémon:", error);
