@@ -153,6 +153,8 @@ main img {
   border: 2px solid #333;
   border-radius: 10px;
   width: 14.0625rem;
+  height: 12.6875rem;
+  object-fit: cover;
   text-align: center;
   font-family: "Press Start 2P", system-ui;
   padding: 10px;
