@@ -144,6 +144,9 @@ main img {
   gap: 20px;
   justify-content: center;
 }
+#pokemon-container > a {
+  text-decoration: none;
+}
 
 .pokemon-card {
   background-color: #f8f8f8;

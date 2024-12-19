@@ -12,7 +12,6 @@ const regions =
   paldea: { start: 906, end: 1025}, 
 };
 
-
 async function fetchPokemonList() {
   try {
     const limit = document.getElementById("pokemon-limit").value;
@@ -63,6 +62,11 @@ async function searchPokemon() {
   }
 }
 
+function getBulbapediaLink(pokemonName) {
+  const baseUrl = "https://bulbapedia.bulbagarden.net/wiki/";
+  return `${baseUrl}${pokemonName}_(Pokémon)`;
+}
+
 async function displayPokemon(url) {
   
   try {
@@ -72,13 +76,16 @@ async function displayPokemon(url) {
     const type = details.types?.[0]?.type?.name || "Unknown";
     const sprite = details.sprites?.front_default || "No sprite available";
     const name = details.name.charAt(0).toUpperCase() + details.name.slice(1);
+    const bulbapediaLink = getBulbapediaLink(name);
 
     container.innerHTML += `
-      <div class="pokemon-card">
-        <h2>${name}</h2>
-        <p>Type: ${type}</p>
-        <img src="${sprite}" alt="${name}" />
-      </div>`;
+      <a href="${bulbapediaLink}" target="_blank">
+        <div class="pokemon-card">
+          <h2>${name}</h2>
+          <p>Type: ${type}</p>
+          <img src="${sprite}" alt="${name}" />
+        </div>
+      </a>`;
   } catch (error) {
     console.error("Error displaying Pokémon:", error);
   }
@@ -102,6 +109,8 @@ async function fetchPokemonByRegion() {
 function clearPokemon() {
   container.innerHTML = '';
 }
+
+
 
 document
   .getElementById("fetch-pokemon")
