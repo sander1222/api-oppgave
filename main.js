@@ -11,8 +11,8 @@ loginForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent the form from reloading the page
 
   // Get the entered username and password
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
   // Check if the entered credentials are correct
   if (username === correctUsername && password === correctPassword) {
@@ -24,5 +24,4 @@ loginForm.addEventListener("submit", function (event) {
     errorMessage.textContent = "Incorrect username or password.";
   }
 });
-
 

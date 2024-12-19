@@ -6,7 +6,7 @@
     <title>Webside Med Login Og Registrering</title>
 
     <!-- Main filen -->
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -18,9 +18,9 @@
 
   <body>
     <div class="wrapper">
-      <form id="loginForm" action="http://httpbin.org/post" method="POST">
-        <h1>Login</h1>
+      <h1>Login</h1>
 
+      <form id="loginForm">
         <!-- Username -->
         <div class="input-box">
           <input type="text" id="username" placeholder="Username" required />
@@ -40,23 +40,26 @@
 
         <!-- Remember Me -->
         <div class="remember">
-          <label><input type="checkbox" />Remember Me</label>
+          <label><input type="checkbox" /> Remember Me</label>
         </div>
 
         <!-- Error Message -->
-        <div id="errorMessage" style="color: red; display: none;"></div>
+        <div id="errorMessage" style="color: rgb(255, 245, 245); display: none;"></div>
 
         <!-- Submit Button -->
         <button type="submit" class="btn">Login</button>
-
-        <!-- Register Link -->
-        <div class="register-link">
-          <p>Don't have an account? Lol get gud XD</p>
-        </div>
       </form>
+
+      <!-- Register Link -->
+      <div class="register-link">
+        <p>Don't have an account? Ask Tor for Help :D</p>
+      </div>
     </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="Audio/Background.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   </body>
 </html>
-
-
-
