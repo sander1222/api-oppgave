@@ -3,6 +3,7 @@ body {
   text-align: center;
   background: url(image/pokemoncards.jpg);
   background-size: contain;
+  background-repeat: repeat;
   margin: 0;
 }
 
