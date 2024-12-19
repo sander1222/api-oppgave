@@ -149,8 +149,9 @@ main img {
   background-color: #f8f8f8;
   border: 2px solid #333;
   border-radius: 10px;
-  width: 150px;
+  width: 14.0625rem;
   text-align: center;
+  font-family: "Press Start 2P", system-ui;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
@@ -166,13 +167,13 @@ main img {
 }
 
 .pokemon-card h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 10px 0;
   color: #f11815;
 }
 
 .pokemon-card p {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #333;
 }
 
