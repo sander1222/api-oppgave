@@ -190,7 +190,16 @@ function clearPokemon() {
   container.innerHTML = '';
 }
 
-
+document.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    const activeElement = document.activeElement;
+    if (activeElement.id === 'pokemon-limit') {
+      fetchPokemonList();
+    } else if (activeElement.id === 'search-pokemon') {
+      searchPokemon(); 
+    }
+  }
+});
 
 document
   .getElementById("fetch-pokemon")
