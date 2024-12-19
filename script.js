@@ -62,6 +62,7 @@ async function searchPokemon() {
   }
 }
 
+// Correct Pokémon names for Bulbapedia links
 function correctPokemonName(name) {
   const corrections = {
     'ho-oh': 'Ho-Oh',
@@ -96,10 +97,49 @@ function correctPokemonName(name) {
     'tapu-lele': 'Tapu_Lele',
     'tapu-bulu': 'Tapu_Bulu',
     'tapu-fini': 'Tapu_Fini',
+    'toxtricity-amped': 'Toxtricity',
+    'mr-rime': 'Mr._Rime',
+    'eiscue-ice': 'Eiscue',
+    'indeedee-male': 'Indeedee',
+    'morpeko-full-belly': 'Morpeko',
+    'urshifu-single-strike': 'Urshifu',
+    'basculegion-male': 'Basculegion',
+    'enamorus-incarnate': 'Enamorus',
+    'oinkologne-male': 'Oinkologne',
+    'maushold-family-of-four': 'Maushold',
+    'squawkabilly-green-plumage': 'Squawkabilly',
+    'palafin-zero': 'Palafin',
+    'tatsugiri-curly': 'Tatsugiri',
+    'dudunsparce-two-segment': 'Dudunsparce',
+    'great-tusk': 'Great_Tusk',
+    'scream-tail': 'Scream_Tail',
+    'brute-bonnet': 'Brute_Bonnet',
+    'flutter-mane': 'Flutter_Mane',
+    'slither-wing': 'Slither_Wing',
+    'sandy-shocks': 'Sandy_Shocks',
+    'iron-treads': 'Iron_Treads',
+    'iron-bundle': 'Iron_Bundle',
+    'iron-hands': 'Iron_Hands',
+    'iron-jugulis': 'Iron_Jugulis',
+    'iron-moth': 'Iron_Moth',
+    'iron-thorns': 'Iron_Thorns',
+    'wo-chien': 'Wo-Chien',
+    'chien-pao': 'Chien-Pao',
+    'ting-lu': 'Ting-Lu',
+    'chi-yu': 'Chi-Yu',
+    'roaring-moon': 'Roaring_Moon',
+    'iron-valiant': 'Iron_Valiant',
+    'walking-wake': 'Walking_Wake',
+    'iron-leaves' : 'Iron_Leaves',
+    'gouging-fire': 'Gouging_Fire',
+    'raging-bolt': 'Raging_Bolt',
+    'iron-boulder': 'Iron_Boulder',
+    'iron-crown': 'Iron_Crown',
   }
   return corrections[name.toLowerCase()] || name;
 }
 
+// Get Bulbapedia link
 function getBulbapediaLink(pokemonName) {
   const correctedName = correctPokemonName(pokemonName);
   const baseUrl = "https://bulbapedia.bulbagarden.net/wiki/";
