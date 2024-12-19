@@ -62,9 +62,48 @@ async function searchPokemon() {
   }
 }
 
+function correctPokemonName(name) {
+  const corrections = {
+    'ho-oh': 'Ho-Oh',
+    'nidoran-m': 'Nidoran♂',
+    'nidoran-f': 'Nidoran♀',
+    'mr-mime': 'Mr._Mime',
+    'deoxys-normal': 'Deoxys',
+    'wormadam-plant': 'Wormadam',
+    'mime-jr': 'Mime_Jr.',
+    'porygon-z': 'Porygon-Z',
+    'giratina-altered': 'Giratina',
+    'shaymin-land': 'Shaymin',
+    'basculin-red-striped': 'Basculin',
+    'darmanitan-standard': 'Darmanitan',
+    'tornadus-incarnate': 'Tornadus',
+    'thundurus-incarnate': 'Thundurus',
+    'landorus-incarnate': 'Landorus',
+    'keldeo-ordinary': 'Keldeo',
+    'meloetta-aria': 'Meloetta',
+    'meowstic-male': 'Meowstic',
+    'aegislash-shield': 'Aegislash',
+    'pumpkaboo-average': 'Pumpkaboo',
+    'gourgeist-average': 'Gourgeist',
+    'zygarde-50': 'Zygarde',
+    'oricorio-baile': 'Oricorio',
+    'lycanroc-midday': 'Lycanroc',
+    'wishiwashi-solo': 'Wishiwashi',
+    'type-null': 'Type:_Null',
+    'minior-red-meteor': 'Minior',
+    'mimikyu-disguised': 'Mimikyu',
+    'tapu-koko': 'Tapu_Koko',
+    'tapu-lele': 'Tapu_Lele',
+    'tapu-bulu': 'Tapu_Bulu',
+    'tapu-fini': 'Tapu_Fini',
+  }
+  return corrections[name.toLowerCase()] || name;
+}
+
 function getBulbapediaLink(pokemonName) {
+  const correctedName = correctPokemonName(pokemonName);
   const baseUrl = "https://bulbapedia.bulbagarden.net/wiki/";
-  return `${baseUrl}${pokemonName}_(Pokémon)`;
+  return `${baseUrl}${correctedName}_(Pokémon)`;
 }
 
 async function displayPokemon(url) {
@@ -90,6 +129,7 @@ async function displayPokemon(url) {
     console.error("Error displaying Pokémon:", error);
   }
 }
+
 
 async function fetchPokemonByRegion() { 
   const selectedRegion = document.getElementById("region-select").value; 
