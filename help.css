@@ -26,7 +26,11 @@ body {
   font-size: 36px;
   text-align: center;
   margin-top: 20px;
+
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 30px black;
 }
+
 .input-box {
   position: relative;
   width: 100%;
@@ -51,6 +55,10 @@ body {
   font-size: 20px;
   color: #000000;
 }
+
+#username, #password {
+  color: white;
+}
 .remember {
   display: flex;
   justify-content: space-between;
@@ -64,6 +72,10 @@ body {
 .remember a:hover {
   text-decoration: underline;
 }
+.remember label {
+  color: rgba(255, 250, 250, .8);
+}
+
 .btn {
   width: 100%;
   height: 45px;
@@ -77,6 +89,8 @@ body {
 .register-link {
   text-align: center;
   margin-top: 15px;
+
+  color: rgba(255, 250, 250, .8);
 }
 #errorMessage {
   margin-top: 10px;
