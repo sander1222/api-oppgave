@@ -23,7 +23,7 @@ async function fetchPokemonList() {
     const data = await response.json();
     const pokemonList = data.results;
 
-    // console.log("Fetched Pokémon List:", pokemonList)
+    console.log("Fetched Pokémon List:", pokemonList)
 
     container.innerHTML = "";
 
@@ -116,6 +116,6 @@ document
   .getElementById('clear-pokemon')
   .addEventListener('click', clearPokemon);
 document
-.getElementById('fetch-region-pokemon')
-.addEventListener('click', fetchPokemonByRegion)
+  .getElementById('fetch-region-pokemon')
+  .addEventListener('click', fetchPokemonByRegion);
 
