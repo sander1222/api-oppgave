@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("Bilder/xd_dx.webp") no-repeat center center;
+  background: url("Login/xd_dx.webp") no-repeat center center;
   background-size: cover;
   background-color: #f4f4f4;
 }
