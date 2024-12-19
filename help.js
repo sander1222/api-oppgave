@@ -17,7 +17,7 @@ loginForm.addEventListener("submit", function (event) {
   // Check if the entered credentials are correct
   if (username === correctUsername && password === correctPassword) {
     alert("Login successful!");
-    window.location.href = "pokeindex.html"; // Redirect to another page
+    window.location.href = "index.html"; // Redirect to another page
   } else {
     // Show an error message if the credentials are incorrect
     errorMessage.style.display = "block";
